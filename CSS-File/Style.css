@@ -385,6 +385,7 @@ input::placeholder {
 /* Initially, the uploaded files section is hidden */
 .Uploaded-Files{
     display: none;
+    width: 203.55px;
 
 }
 
