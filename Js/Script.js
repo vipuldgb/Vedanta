@@ -166,8 +166,10 @@ document.querySelector('.Browse').addEventListener('click', function () {
 /*--------------------------------Mesage Part------------------------------- */
 
 // Add event listener to the button
+
+
 sendMessageButton.addEventListener("click", function () {
-    const message = messageInput.value; // Get the input value (message)
+    const message = messageInput.value.trim(); // Get the input value (message) and trim whitespace
 
     if (message) {
         // Save the message in session storage
@@ -177,12 +179,17 @@ sendMessageButton.addEventListener("click", function () {
         messageInput.value = "";
 
         console.log("Message saved:", message);
+
+        // Navigate to text.html only if there is a message
+        window.location.href = '../Chat-Bot/text.html'; // Replace with the actual URL or page path
     } else {
         console.log("Please type a message before sending.");
+        alert("Please type a message before sending."); // Optionally, alert the user
     }
 });
 
 
+<<<<<<< HEAD
 /*---------------------------------------Save PDF ON Local Storage------------------------------ */
 
 // Handle search functionality to store selected PDF in local storage
@@ -208,3 +215,9 @@ searchPdfButton.addEventListener('click', function () {
         alert("Please select exactly one file to store.");
     }
 });
+=======
+
+
+
+
+>>>>>>> 75fa9e4cf272cef08865e94cbd8ca767cce32acd
