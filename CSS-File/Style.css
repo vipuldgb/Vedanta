@@ -385,8 +385,6 @@ input::placeholder {
 /* Initially, the uploaded files section is hidden */
 .Uploaded-Files{
     display: none;
-    width: 203.55px;
-
 }
 
 
@@ -395,14 +393,14 @@ input::placeholder {
     max-width: 100%;
     width: 1094px;
     margin: 0 auto;
-    height: 203.55px;
+    /* height: 203.55px; */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 32px;
-    opacity: 0px;
-    padding: 0 53px 18px 53px;
+    gap: 20px;
+    /* opacity: 0px;
+    padding: 0 53px 18px 53px; */
 }
 
 
@@ -410,7 +408,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     align-items: center; 
-    margin: 10px;
+    /* margin: 10px; */
     max-width: 100%;
     width: 193.2px;
     margin: 0 auto;
