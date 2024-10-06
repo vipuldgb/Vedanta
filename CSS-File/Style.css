@@ -1,0 +1,486 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #F3F5F9;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/*-------------------Navbar----------------*/
+nav {
+    padding: 24px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+.nav-logo {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-logo1,
+.nav-logo2 {
+    padding: 4px 8px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo1 {
+    width: 182px;
+    height: 52.2px;
+}
+
+.logo2 {
+    width: 93px;
+    height: 52px;
+}
+
+
+.profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 99px;
+    box-shadow: 0px 16px 40px 0px #7090B033;
+
+}
+
+
+/*--------------------------Section--------------*/
+
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 0 120px 80.8px 120px;
+}
+
+.section-header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.star-logo {
+    width: 18.62px;
+    height: 22.43px;
+}
+
+.title {
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    color: #339933;
+}
+
+.section-discription {
+    text-align: center;
+    max-width: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.book-image {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.section-discription p {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #25213B;
+}
+
+/*---------Inncreased All font-size with +2---------------*/
+
+.discription-question h6 {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #25213B;
+    text-align: center;
+}
+
+/*------------------------------------Select Files------------------------------------*/
+
+.section-select-delete-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    opacity: 0px;
+    margin: 0 53px;
+}
+
+.select-files {
+    display: flex;
+    width: 226px;
+    height: 30px;
+    gap: 12px;
+    opacity: 0px;
+
+}
+
+.select-files button,
+.delete-button button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+.btn-recent {
+    color: #339933;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+}
+
+.btn-recent::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1.2px;
+    background-color: #339933;
+}
+
+.btn-recent:hover {
+    color: #287a29;
+    ;
+}
+
+
+.btn-select {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8D8D8D;
+    text-align: center;
+}
+
+.btn-select:hover {
+    color: #EEE;
+}
+
+.delete-button {
+    width: 28px;
+    height: 28px;
+    padding: 3.5px 5.83px 3.5px 5.83px;
+}
+
+.delete-button img {
+    width: 16.33px;
+    height: 21px;
+    top: 3.5px;
+    left: 5.83px;
+
+}
+
+.delete-selected-files {
+    display: none;
+}
+
+.delete-page2-files {
+    width: 180px;
+    height: 36px;
+    padding: 9px 6px;
+}
+
+.delete-page2-files button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    opacity: 0px;
+    padding: 4px 6px 4px 6px;
+    border-radius: 4px;
+    border: 1px solid #F44336;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+}
+
+
+/*------------------------------- Drop File Container-----------------------------------------*/
+
+
+.drop-file-container {
+    height: 59px;
+    margin: 0 259.5px;
+    border: 3px dashed #1890FF;
+    background-color: #EFF8FE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5.5px;
+    cursor: pointer;
+    padding: 12px 25px;
+}
+
+
+.upload-icon img {
+    width: 35px;
+    height: 35px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-file label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+}
+
+
+.drop-file-container .Browse {
+    color: #1890FF;
+    cursor: pointer;
+}
+
+.drop-file-container .PDF {
+    color: #949595;
+}
+
+/*------------------------------------Input Filed-------------------------------------*/
+
+
+.message-type-container {
+    height: 50px;
+    margin: 0 12px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+    background-color: #F3F5F9;
+    border: 0.5px solid #C6C6C7
+}
+
+.message-type-container input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #32325D;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    background-color: #F3F5F9;
+    font-family: "Inter", sans-serif;
+}
+
+input::placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    color: #32325D;
+    font-family: "Inter", sans-serif;
+}
+
+.message-type-container button {
+    border: none;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    background-color: #F3F5F9;
+}
+
+.message-type-container button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+
+/* Initially hide the drop-file-page2 container */
+.drop-file-page2 {
+    display: none;
+}
+
+
+.choose-files {
+    width: 248px;
+    height: 40px;
+    padding: 8px 12px 8px 12px;
+    gap: 12px;
+    border-radius: 4px;
+    border: 2px;
+    opacity: 0px;
+    border: 3px dashed #1890FF;
+    background: #EFF8FE;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+
+
+.choose-files .upload-icon img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+/*-----------------------------Upload Files-----------------------*/
+
+
+
+
+/* Initially, the uploaded files section is hidden */
+.Uploaded-Files{
+    display: none;
+
+}
+
+
+#fileDetails
+{
+    max-width: 100%;
+    width: 1094px;
+    margin: 0 auto;
+    height: 203.55px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    opacity: 0px;
+    padding: 0 53px 18px 53px;
+}
+
+
+.File-Name-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 10px;
+    max-width: 100%;
+    width: 193.2px;
+    margin: 0 auto;
+    height: 210.55px;
+    padding: 8px;
+    gap: 8px;
+    border-radius: 10px;
+    background: #F3F3F9;
+    position: relative;
+}
+
+.file-info-row {
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-start;
+    align-items: center; 
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.pdf-preview {
+    width: 177.2px;
+    height: 164.55px;
+}
+
+.pdf-image {
+    width: 15px; /* Size of the PDF icon */
+    height: 15px;
+}
+
+.file-name {
+    font-size: 14px;
+    text-align: left; 
+    word-wrap: break-word; 
+}
+
+
+
+
+
+/* Checkbox styling */
+.file-checkbox {
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #339933;
+    border-radius: 3px;
+    z-index: 10;
+}
+
+
+
+
+/*-----------------------Responsive---------------------*/
+
+@media screen and (max-width: 1050px) {
+
+    .drop-file-container {
+        margin: 0 100px;
+    }
+
+}
+
+@media screen and (max-width: 1050px) {
+    .drop-file-container {
+        margin: 0 50px;
+    }
+}

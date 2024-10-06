@@ -1,0 +1,349 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #F3F5F9;
+  height: 100vh;
+}
+
+
+/* ---------------------------Header section------------------------------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-height: 9.36vh; 
+  padding-top: 21px; 
+  padding-right: 21.36px;
+  padding-left: 6.4px;
+  margin: 8px;
+}
+
+.logo-section {
+  display: flex;
+  width: auto; 
+  height: auto; 
+  gap: 2.67vh; 
+}
+
+.v-logo {
+  height: 8.5vh;
+  padding: 3.52px 7.12px 3.52px 7.12px;
+  gap: 7.12px;
+  border-radius: 7.12px 0 0 0; 
+}
+
+.c-logo-bg {
+  margin-top: 2px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.c-logo {
+  height: 7.67vh;
+  /* padding: 12px; */
+  padding: 0.5vh 1.89vh 0.44vh 1.89vh;
+  border-radius: 0.89vh 0 0 0;
+}
+
+.user-logo {
+  height: 15vh;
+  border-radius: 99px 0 0 0;
+}
+
+/*----------------------------Main Body--------------------------------------- */
+section {
+  margin: 24px 10px 0px 25px;
+  gap: 25px;
+  display: flex;
+  position: relative;
+}
+
+
+
+/* ---------- Section 1 ----------- */
+
+.section1 {
+  width: 72%;
+  row-gap: 12px;
+  
+}
+
+.part1 {
+  margin-bottom: 18px;
+  border-radius: 1.5vh;
+  background-color: white;
+  /* height: 19%; */
+  height: auto;
+  gap: 1.11vh; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+
+
+}
+
+.part1_user {
+  align-items: center;
+  gap: 6px; 
+  padding: 0.5px 0 0 8px;
+  display: flex;
+}
+
+.userlogo {
+  height: 3.8vh;
+  padding: 0.39vh 0.56vh 0.39vh 0.56vh; 
+  border-radius: 10.99vh 0 0 0; 
+}
+
+.part1_user > p {
+  font-weight: bold;
+  color: #339933;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700; 
+  text-align: left;
+}
+
+.part1 > p {
+  font-size: larger;
+  padding-bottom: 9px;  
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.pdf_user {
+  background-color: #F3F5F9;
+  display: flex;
+  margin-left: 10px;
+  justify-content: flex-start;
+  width: 37vh;
+  border-radius: 0.5vh;
+  gap: 1.33vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.pdf_user > img {
+  height: 3vh;
+  margin-top: 21px;
+  margin-left: 12px;
+}
+
+.pdf_user > p {
+  padding: 6px 10px 10px 10px;
+}
+
+
+@media (max-width: 768px) {
+   .part1>p{
+      font-weight: 600;
+  }
+  
+  .pdf_user {
+      width: 33vw;
+  }
+}
+
+
+.part2 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 18px;
+  border-radius: 1.5vh;
+  /* height: 38%; */
+  height: auto;
+  gap: 1.11vh; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+.logo-container {
+  display: flex;
+  justify-content: start;
+  padding: 0.5px 0 0 8px;
+}
+
+.logo-container > p {
+  font-weight: bold;
+  color: #339933;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.67vh; 
+  text-align: left;
+  margin-top: 28px;
+  margin-left: 12px;
+}
+
+.logo-container > img {
+  height: 3vh;
+  margin-top: 21px;
+  margin-left: 12px;
+}
+
+.paragraph-container {
+  font-size: larger;
+  /* margin-top: -21px; */
+}
+
+.paragraph-container > p {
+  margin:0 15px 0 15px;
+  line-height: 28px;
+  text-align: justify;
+  /* padding: 2px; */
+}
+
+.thumb-container {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 4px;
+}
+
+/* .thumb > img {
+ 
+  height: 2.67vh; 
+  padding: 5px;
+} */
+
+
+
+.part3 {
+  background-color: white;
+  margin-bottom: 18px;
+  border-radius: 1.5vh;
+  /* height: 38%; */
+  height: auto;
+  gap: 2.67vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.normal-dislike {
+  transform: rotate(180deg);
+  /* transform: rotate(360deg); */
+  transform: scaleY(-1);
+
+}
+
+
+
+.part4 {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  /* height: 4%; */
+  height: auto;
+  border-radius: 1.5vh;
+  gap: 1.11vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(73, 114, 34, 0.3);
+  align-items: center;
+  margin-bottom: 18px;
+ 
+}
+
+.part4 > input {
+  width: 99.9%; 
+  border: none; 
+  outline: none; 
+  margin-left: 10px;
+  font-size: 16px;
+  padding: 21px; 
+}
+
+.part4 > button {
+  background-color: transparent;
+  border: none;
+  padding: 6.72px 5.36px 6.72px 5.36px;
+  cursor: pointer;
+}
+
+.part4 > button img {
+  width: 3.56vh;
+  height: 4vh;
+  border-radius: 0.22vh 0 0 0;
+}
+
+.part4 > button:focus {
+  outline: none;
+}
+
+
+
+
+/*--------- Section 2 ----------- */
+.section2 {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  background-color: white;
+  width: 26%;
+  border-radius: 12px;
+  height: 80vh;
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0; 
+ 
+ 
+}
+
+
+.s2-pdf {
+  display: flex;
+  align-items: center; 
+  padding: 12px;
+  gap: 6px;
+ 
+}
+
+.s2-pdf img {
+  height: 2.8vh;
+}
+
+.s2-pdf p{
+  font-weight: 700;
+  font-size: larger;
+}
+
+
+.pdfView {
+  width: auto;  
+  height: auto;  
+  margin: 12px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px; 
+}
+
+
+
+
+/* Adding Button to each element and making button Functional */
+
+
+.btn{
+  border: none;
+  background-color: white;
+}
+
+.material-symbols-outlined {
+  font-size: 48px; 
+  padding: 10px;  
+  display: inline-block; 
+  transition: background-color 0.3s ease; 
+  border-radius: 50%; 
+}
+
+.thumb-container {
+  margin-top: 20px;
+}
+
+.btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 24px; /* Size of the icon */
+  border-radius: 50%;
+}
+.liked {
+  background-color:green;
+  color: white; 
+}
+.disliked {
+  background-color: red;
+  color: white; 
+}
