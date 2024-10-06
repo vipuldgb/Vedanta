@@ -46,7 +46,7 @@ function renderUploadedFiles() {
         reader.onload = function (e) {
             const typedarray = new Uint8Array(e.target.result);
 
-            // Load PDF.js
+
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
             pdfjsLib.getDocument(typedarray).promise.then(function (pdf) {
                 pdf.getPage(1).then(function (page) {
@@ -121,7 +121,7 @@ fileInput.addEventListener('change', async function (event) {
 
         // Check if the file is a PDF and under 5MB
 
-        if (file.type === 'application/pdf' && file.size <= 5 * 1024 * 1024) {
+        if (file.type === 'application/pdf') {
             uploadedFiles.push(file);
             renderUploadedFiles();
             dropFileContainer.style.display = 'none';
