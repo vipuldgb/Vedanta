@@ -35,55 +35,74 @@ function renderUploadedFiles() {
         const fileContainer = document.createElement('div');
         fileContainer.className = 'File-Name-image';
 
-        const filePreview = document.createElement('embed');
-        filePreview.src = URL.createObjectURL(file);
-        filePreview.type = 'application/pdf';
-        filePreview.className = 'pdf-preview';
 
+        // Create a canvas element to render the first page of the PDF
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.className = 'pdf-preview'; // Add class for styling
 
+        // Create a FileReader to read the PDF file
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const typedarray = new Uint8Array(e.target.result);
 
-        // Create the row for the PDF image and file name
-        const fileInfoRow = document.createElement('div');
-        fileInfoRow.className = 'file-info-row';
+            // Load PDF.js
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
+            pdfjsLib.getDocument(typedarray).promise.then(function (pdf) {
+                pdf.getPage(1).then(function (page) {
+                    const scale = 1.5; // Scale for rendering the page
+                    const viewport = page.getViewport({ scale: scale });
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
 
+                    // Render PDF page into canvas context
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext).promise.then(function () {
+                        // Append canvas to the file container after rendering
+                        fileContainer.appendChild(canvas);
 
+                        // Create the row for the PDF image and file name
+                        const fileInfoRow = document.createElement('div');
+                        fileInfoRow.className = 'file-info-row';
 
-        // Image below PDF preview (pdf.svg)
-        const pdfImage = document.createElement('img');
-        pdfImage.src = './Images/pdf.svg';
-        pdfImage.alt = 'PDF';
-        pdfImage.className = 'pdf-image';
+                        // Image below PDF preview (pdf.svg)
+                        const pdfImage = document.createElement('img');
+                        pdfImage.src = './Images/pdf.svg';
+                        pdfImage.alt = 'PDF';
+                        pdfImage.className = 'pdf-image';
 
+                        const fileName = document.createElement('div');
+                        fileName.className = 'file-name';
+                        fileName.textContent = file.name.split(' ')[0];
+                        //fileName.textContent = file.name.split(' ').slice(0, 2).join(' ');
 
+                        // Create a checkbox for each file
+                        const fileCheckbox = document.createElement('input');
+                        fileCheckbox.type = 'checkbox';
+                        fileCheckbox.className = 'file-checkbox';
+                        fileCheckbox.dataset.fileIndex = index;
 
-        const fileName = document.createElement('div');
-        fileName.className = 'file-name';
-        fileName.textContent = file.name.split(' ').slice(0, 2).join(' ');
+                        // Append PDF image and file name to the row
+                        fileInfoRow.appendChild(pdfImage);
+                        fileInfoRow.appendChild(fileName);
 
+                        // Append elements to the container
+                        fileContainer.appendChild(fileCheckbox);
+                        fileContainer.appendChild(fileInfoRow);
 
-        // Create a checkbox for each file
-        const fileCheckbox = document.createElement('input');
-        fileCheckbox.type = 'checkbox';
-        fileCheckbox.className = 'file-checkbox';
-        fileCheckbox.dataset.fileIndex = index;
+                        // Append file container to the fileDetails section
+                        fileDetails.appendChild(fileContainer);
 
+                    });
+                });
+            });
+        };
 
-
-        // Append PDF image and file name to the row
-        fileInfoRow.appendChild(pdfImage);
-        fileInfoRow.appendChild(fileName);
-
-
-
-        // Append elements to the container
-        fileContainer.appendChild(fileCheckbox);
-        fileContainer.appendChild(filePreview);
-        fileContainer.appendChild(fileInfoRow);
-
-
-        // Append file container to the fileDetails section
-
-        fileDetails.appendChild(fileContainer);
+        // Read the file as an ArrayBuffer
+        reader.readAsArrayBuffer(file);
 
 
     });
@@ -111,9 +130,7 @@ fileInput.addEventListener('change', async function (event) {
             deleteButtonPage2.style.display = 'block';
             deleteButtonPage1.style.display = 'none';
             searchPdf.style.display = 'block';
-            // uploadedFilesSection.style.display = 'block';
-
-            // dropFilePage2.classList.add('drop-file-page2'); 
+            
 
         } else {
             alert('Please upload a PDF file under 5MB.');
@@ -201,7 +218,7 @@ searchPdfButton.addEventListener('click', function () {
         const selectedFile = uploadedFiles[selectedFileIndex];
 
 
-        
+
         // Create a FileReader to read the PDF file as a Data URL
         const reader = new FileReader();
         reader.onloadend = function () {

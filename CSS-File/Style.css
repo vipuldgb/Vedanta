@@ -335,8 +335,9 @@ input::placeholder {
 /*--------------------------------------------------------*/
 
 
-
 /* Initially hide the drop-file-page2 container */
+
+
 .drop-file-page2 {
     display: none;
 }
@@ -380,28 +381,20 @@ input::placeholder {
 /*-----------------------------Upload Files-----------------------*/
 
 
-
-
-/* Initially, the uploaded files section is hidden */
-.Uploaded-Files{
+.Uploaded-Files {
     display: none;
 }
 
-
-#fileDetails
-{
-    /* opacity: 0px;
-    padding: 0 53px 18px 53px; */
+#fileDetails {
     max-width: 100%;
     width: 1094px;
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap; /* Enable wrapping */
+    flex-wrap: wrap; 
     justify-content: center;
     align-items: center;
     gap: 20px; 
 }
-
 
 .File-Name-image {
     display: flex;
@@ -409,22 +402,24 @@ input::placeholder {
     align-items: center; 
     max-width: 100%;
     width: 193.2px;
+    height: 210.55px; /* Fixed height */
     margin: 0 auto;
-    height: 210.55px;
     padding: 8px;
     gap: 8px;
     border-radius: 10px;
     background: #F3F3F9;
     position: relative;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
 }
 
 .file-info-row {
     display: flex;
     flex-direction: row; 
-    justify-content: flex-start;
+    justify-content: flex-start; /* Center the items */
     align-items: center; 
     gap: 10px;
-    margin-top: 10px;
 }
 
 .pdf-preview {
@@ -433,7 +428,7 @@ input::placeholder {
 }
 
 .pdf-image {
-    width: 15px; /* Size of the PDF icon */
+    width: 15px; 
     height: 15px;
 }
 
@@ -441,15 +436,13 @@ input::placeholder {
     font-size: 14px;
     text-align: left; 
     word-wrap: break-word; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
 }
-
-
-
-
 
 /* Checkbox styling */
 .file-checkbox {
-
     position: absolute;
     top: 15px;
     right: 15px;
@@ -459,40 +452,40 @@ input::placeholder {
     cursor: pointer;
     background-color: white;
     border: 1px solid #339933;
-    border-radius: 3px;
     z-index: 10;
 }
 
 
+
+
 /*-----------------------Search PDF---------------------*/
 
-.submit-pdf
-{
+.submit-pdf {
     display: none;
 }
 
 
-.pdf-search-container button{
+.pdf-search-container button {
     padding: 10px 20px;
-    background-color: #4CAF50; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
 .pdf-search-container button:hover {
-    background-color: #45a049; 
+    background-color: #45a049;
 }
 
 .pdf-search-container button:active {
-    background-color: #388e3c; 
+    background-color: #388e3c;
 }
 
 .pdf-search-container {
-    text-align: center; 
+    text-align: center;
     margin-top: 20px;
 }
 
