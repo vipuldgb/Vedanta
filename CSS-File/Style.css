@@ -390,17 +390,16 @@ input::placeholder {
 
 #fileDetails
 {
+    /* opacity: 0px;
+    padding: 0 53px 18px 53px; */
     max-width: 100%;
     width: 1094px;
     margin: 0 auto;
-    /* height: 203.55px; */
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping */
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    /* opacity: 0px;
-    padding: 0 53px 18px 53px; */
+    gap: 20px; 
 }
 
 
@@ -408,7 +407,6 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     align-items: center; 
-    /* margin: 10px; */
     max-width: 100%;
     width: 193.2px;
     margin: 0 auto;
@@ -463,6 +461,39 @@ input::placeholder {
     border: 1px solid #339933;
     border-radius: 3px;
     z-index: 10;
+}
+
+
+/*-----------------------Search PDF---------------------*/
+
+.submit-pdf
+{
+    display: none;
+}
+
+
+.pdf-search-container button{
+    padding: 10px 20px;
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.pdf-search-container button:hover {
+    background-color: #45a049; 
+}
+
+.pdf-search-container button:active {
+    background-color: #388e3c; 
+}
+
+.pdf-search-container {
+    text-align: center; 
+    margin-top: 20px;
 }
 
 
