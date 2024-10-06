@@ -30,65 +30,16 @@
                 </div>
                 <span class="pdf_user">
                     <img src="../Assets/pdf.svg" alt="">
-                    <p>Legal.pdf</p>
+                    <p id="pdf-name"></p>
                 </span>
                <p>Welcome to our chatbot, where your journey is powered by the PDF you choose! Start chatting or ask any questions you have about it!</p>
             </div>
             
-                <!-- <div class="part2">
-                    <div class="logo-container">
-                        <p>DBRX</p>
-                        <img src="../Assets/dbrx.svg" alt="">
-                    </div>
-                    <div class="paragraph-container">
-                        <p>Non-Disclosure Agreements (NDAs) are crucial tools for businesses aiming to protect sensitive information shared with potential partners, clients. These legal contracts are designed to keep proprietary information, trade secrets, and business strategies confidential, thus preserving the company’s competitive advantage in the industry. By implementing NDAs, businesses can communicate openly and share critical information without the risk of it being exposed to competitors</p>
-                        <br>
-                        <p>In collaborative environments, companies often share valuable insights and data that can greatly influence their operations. By implementing NDAs, businesses can communicate openly and share critical information without the risk of it being exposed to competitors, allowing both parties to work together efficiently while ensuring confidentiality.</p>
-                        <p>Non-Disclosure Agreements (NDAs) are crucial tools for businesses aiming to protect sensitive information shared with potential partners, clients. These legal contracts are designed to keep proprietary information, trade secrets, and business strategies confidential, thus preserving the company’s competitive advantage in the industry. By implementing NDAs, businesses can communicate openly and share critical information without the risk of it being exposed to competitors</p>
-                        <br>
-                        <p>In collaborative environments, companies often share valuable insights and data that can greatly influence their operations. By implementing NDAs, businesses can communicate openly and share critical information without the risk of it being exposed to competitors, allowing both parties to work together efficiently while ensuring confidentiality.</p>
-                    </div>
-                    <div class="thumb-container">
-                        <button id="like-btn" class="btn">
-                            <span id="like-icon" class="material-symbols-outlined">
-                                thumb_up
-                            </span>
-                        </button>
-                          
-                        <button id="dislike-btn" class="btn">
-                            <span id="dislike-icon" class="material-symbols-outlined">
-                                thumb_down
-                            </span>
-                        </button>
-                    </div>
-                    
-                    
-                </div> -->
-                <!-- <div class="part3"> 
-                    <div class="logo-container">
-                    <img src="../Assets/meta.svg" alt="">
-                    <p>Meta AI</p>
-                    </div>
-                <div class="paragraph-container">
-                    <p>Businesses often enter into Non-Disclosure Agreements (NDAs) to safeguard sensitive information shared with potential partners, clients, or vendors. This legal contract helps ensure that proprietary information, trade secrets, and business strategies remain confidential, thereby protecting the company's competitive edge in the marketplace. By implementing NDAs, businesses can communicate openly and share critical information without the risk of it being exposed to competitors</p>
-                    <br>
-                    <p>When companies collaborate, they frequently exchange valuable insights and data that could significantly impact their operations. By requiring NDAs, businesses can confidently share information without the fear of it being disclosed to competitors, ensuring that both parties can work together effectively while maintaining confidentiality.By implementing NDAs, businesses can communicate openly and share critical information without the risk of it being exposed to competitors</p>
-                </div>
-                <div class="thumb-container">
-                    <button id="like-btn" class="btn">
-                        <span class="material-symbols-outlined">
-                            thumb_up
-                            </span>
-                    </button>
-                      
-                    <button id="dislike-btn" class="btn">
-                        <span class="material-symbols-outlined">
-                            thumb_down
-                            </span>
-                    </button>
-                </div>
+               
+            <div>
+                <h1>Upload PDF</h1>
+                <input type="file" id="pdf-input" accept="application/pdf" class="file-input">
             </div>
-            -->
             <div id="content-container"></div> <!-- Container for dynamically added content -->
             <div class="part4">
                 <input type="text" placeholder="Type a message" id="messageInput">
@@ -100,9 +51,9 @@
           <div class="section2">
             <div class="s2-pdf">
                 <img src="../Assets/pdf.svg" alt="">
-                <p>Legal.pdf</p>
+                <p id="pdf-name2"></p>
             </div>
-            <img class="pdfView" src="../Assets/pdfForm2.png" alt="">
+            <img id="pdf-image" class="pdfView" src="" alt="">
           </div>
         </section>
       
@@ -111,5 +62,75 @@
    
 
     <script type="module" src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Debugging statement
+            console.log('DOM fully loaded and parsed');
+
+            // Retrieve the stored PDF data and file name from localStorage
+            const base64String = localStorage.getItem('uploadedFile');
+            const pdfName = localStorage.getItem('uploadedFileName');
+
+            // Debugging statement for localStorage
+            console.log('Base64 PDF:', base64String);
+            console.log('PDF Name:', pdfName);
+
+            // Display the PDF name
+            const pdfNameDisplay = document.getElementById('pdf-name');
+            const pdfNameDisplay2 = document.getElementById('pdf-name2');
+
+            // Check if the element is found
+            if (pdfNameDisplay) {
+                pdfNameDisplay.innerText = pdfName || 'No PDF Selected';
+                pdfNameDisplay2.innerText = pdfName || 'No PDF Selected';
+            } else {
+                console.error('Element with id "pdf_name" not found');
+            }
+
+            // Check if there is a PDF in localStorage
+            if (base64String) {
+                // Convert base64 back to Uint8Array
+                const binaryString = atob(base64String);
+                const len = binaryString.length;
+                const bytes = new Uint8Array(len);
+                for (let i = 0; i < len; i++) {
+                    bytes[i] = binaryString.charCodeAt(i);
+                }
+
+                // Use PDF.js to render the first page of the PDF
+                const loadingTask = pdfjsLib.getDocument({ data: bytes });
+                loadingTask.promise.then(function(pdf) {
+                    // Fetch the first page
+                    pdf.getPage(1).then(function(page) {
+                        const scale = 1.5; // Scale for rendering the page
+                        const viewport = page.getViewport({ scale: scale });
+                        const canvas = document.createElement('canvas'); // Create a canvas
+                        const context = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        // Render the page into the canvas context
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport
+                        };
+
+                        page.render(renderContext).promise.then(function() {
+                            // Convert canvas to image
+                            const imgData = canvas.toDataURL('image/png');
+                            const pdfImage = document.getElementById('pdf-image');
+                            pdfImage.src = imgData; // Set the image source
+                            pdfImage.style.display = 'block'; // Show the image
+                        });
+                    });
+                }).catch(function(error) {
+                    console.error('Error loading PDF: ' + error);
+                });
+            } else {
+                console.log('No PDF found in localStorage.');
+            }
+        });
+    </script>
 </body>
 </html>

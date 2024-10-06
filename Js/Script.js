@@ -191,7 +191,47 @@ sendMessageButton.addEventListener("click", function () {
 
 /*---------------------------------------Save PDF ON Local Storage------------------------------ */
 
-// Handle search functionality to store selected PDF in local storage
+// //Handle search functionality to store selected PDF in local storage
+// searchPdfButton.addEventListener('click', function () {
+//     const selectedCheckboxes = document.querySelectorAll('.file-checkbox:checked');
+
+//     // Check if exactly one checkbox is selected
+//     if (selectedCheckboxes.length === 1) {
+//         const selectedFileIndex = selectedCheckboxes[0].dataset.fileIndex;
+//         const selectedFile = uploadedFiles[selectedFileIndex];
+
+
+        
+//         // Create a FileReader to read the PDF file as a Data URL
+//         const reader = new FileReader();
+//         reader.onloadend = function (e) {
+//             const base64String = btoa(e.target.result);
+//             // Store the file in local storage
+//             //localStorage.setItem("uploadedFile", reader.result);
+//             localStorage.setItem('uploadedFile', base64String); 
+//             // alert(`File "${selectedFile.name}" has been stored in local storage.`);
+//         };
+//         // reader.readAsDataURL(selectedFile);
+//         reader.readAsBinaryString(selectedFile);
+//     } else {
+
+//         alert("Please select exactly one file to store.");
+//     }
+// });
+
+
+// const sendButton = document.getElementById('search-pdf-btn');
+
+// // Add a click event listener to the button
+// sendButton.addEventListener('click', function() {
+//     // Redirect to the pdf.html page when clicked
+//     window.location.href = '../Chat-Bot/pdf.html';
+// });
+
+
+
+//const searchPdfButton = document.getElementById('search-pdf-btn');
+
 searchPdfButton.addEventListener('click', function () {
     const selectedCheckboxes = document.querySelectorAll('.file-checkbox:checked');
 
@@ -200,23 +240,29 @@ searchPdfButton.addEventListener('click', function () {
         const selectedFileIndex = selectedCheckboxes[0].dataset.fileIndex;
         const selectedFile = uploadedFiles[selectedFileIndex];
 
-
-        
-        // Create a FileReader to read the PDF file as a Data URL
+        // Create a FileReader to read the PDF file as a binary string
         const reader = new FileReader();
-        reader.onloadend = function () {
-            // Store the file in local storage
-            localStorage.setItem("uploadedFile", reader.result);
-            alert(`File "${selectedFile.name}" has been stored in local storage.`);
+        reader.onloadend = function (e) {
+            // Convert the binary string to base64
+            const base64String = btoa(e.target.result);
+            // Store the base64 string of the file in local storage
+            localStorage.setItem('uploadedFile', base64String);
+            // Store the file name in local storage
+            localStorage.setItem('uploadedFileName', selectedFile.name);
+           // alert(`File "${selectedFile.name}" has been stored in local storage.`);
         };
-        reader.readAsDataURL(selectedFile);
+        // Read the file as binary string
+        reader.readAsBinaryString(selectedFile);
     } else {
         alert("Please select exactly one file to store.");
     }
 });
 
+// Add a click event listener to the button for navigation
+const sendButton = document.getElementById('search-pdf-btn');
 
-
-
-
+sendButton.addEventListener('click', function() {
+    // Redirect to the pdf.html page when clicked
+    window.location.href = '../Chat-Bot/pdf.html';
+});
 
