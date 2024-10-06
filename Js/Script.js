@@ -189,7 +189,6 @@ sendMessageButton.addEventListener("click", function () {
 });
 
 
-<<<<<<< HEAD
 /*---------------------------------------Save PDF ON Local Storage------------------------------ */
 
 // Handle search functionality to store selected PDF in local storage
@@ -215,9 +214,9 @@ searchPdfButton.addEventListener('click', function () {
         alert("Please select exactly one file to store.");
     }
 });
-=======
 
 
 
 
->>>>>>> 75fa9e4cf272cef08865e94cbd8ca767cce32acd
+
+
