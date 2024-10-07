@@ -169,9 +169,11 @@ deleteButton.addEventListener('click', function () {
         deleteButtonPage1.style.display = 'block';
         searchPdf.style.display = 'none';
 
-        setTimeout(() => {
-            location.reload();
-        }, 1000);
+        location.reload();
+
+        // setTimeout(() => {
+        //     location.reload();
+        // }, 1000);
 
     }
 });

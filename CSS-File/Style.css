@@ -213,7 +213,7 @@ section {
 .delete-page2-files {
     width: 180px;
     height: 36px;
-    padding: 9px 6px;
+    /* padding: 9px 6px; */
 }
 
 .delete-page2-files button {
