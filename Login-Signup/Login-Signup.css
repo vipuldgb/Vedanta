@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Login-Page-Container {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    height: 100vh;
+}
+
+.Login-Left-Part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #F4F4F4
+}
+
+.Login-Left-Part::before {
+    content: '';
+    background: url(../Images/Side-Image.svg) no-repeat;
+    background-position: top left;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 299px;
+    height: 240px;
+
+}
+
+
+.Login-Right-Part {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 76.8px;
+
+}
+
+.Logo-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 210px;
+    margin: 0 auto;
+}
+
+.Logo-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Title-Container h6 {
+    font-family: Poppins;
+    font-size: 16.16px;
+    font-weight: 600;
+    line-height: 24.23px;
+    text-align: center;
+
+}

@@ -221,7 +221,7 @@ document.querySelector('.choose-files').addEventListener('click', function () {
 /* -------------------------------------------------Profile Page--------------------------------------------- */
 
 document.getElementById('goBackButtonID').addEventListener('click', function () {
-    window.location.href = './INDEX.html';
+    window.location.href = '../Chat-Bot/pdf.html';
 })
 
 
