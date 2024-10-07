@@ -8,6 +8,7 @@ const messageContainer = document.querySelector('.message-type-container');
 const deleteButtonPage1 = document.querySelector('.delete-page1');
 const deleteButtonPage2 = document.querySelector('.delete-selected-files');
 const searchPdf = document.querySelector('.submit-pdf');
+const choosePDF = document.querySelector('.choose-files');
 
 // Select the input and button elements
 
@@ -39,7 +40,7 @@ function renderUploadedFiles() {
         // Create a canvas element to render the first page of the PDF
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
-        canvas.className = 'pdf-preview'; // Add class for styling
+        canvas.className = 'pdf-preview'; 
 
         // Create a FileReader to read the PDF file
         const reader = new FileReader();
@@ -96,6 +97,22 @@ function renderUploadedFiles() {
                         // Append file container to the fileDetails section
                         fileDetails.appendChild(fileContainer);
 
+
+                        fileContainer.addEventListener('click', function (event) {
+                            if (!event.target.classList.contains('file-checkbox')) {
+                                const reader = new FileReader();
+
+                                reader.onloadend = function (e) {
+                                    const base64String = btoa(e.target.result);
+                                    localStorage.setItem('uploadedFile', base64String);
+                                    localStorage.setItem('uploadedFileName', file.name);
+                                    window.location.href = '../Chat-Bot/pdf.html';
+                                };
+
+                                reader.readAsBinaryString(file);
+                            }
+                        });
+
                     });
                 });
             });
@@ -112,7 +129,13 @@ function renderUploadedFiles() {
 
 }
 
-// Handle file selection and upload
+
+
+
+
+/*-------------------------------------------------Handle File Upload and Selection------------------------------------------ */
+
+
 
 fileInput.addEventListener('change', async function (event) {
 
@@ -127,11 +150,9 @@ fileInput.addEventListener('change', async function (event) {
             renderUploadedFiles();
             dropFileContainer.style.display = 'none';
             dropFilePage2.style.display = 'block';
-            messageContainer.style.display = 'none';
             deleteButtonPage2.style.display = 'block';
             deleteButtonPage1.style.display = 'none';
-            searchPdf.style.display = 'block';
-            
+
 
         } else {
             alert('Please upload a PDF file under 5MB.');
@@ -141,7 +162,15 @@ fileInput.addEventListener('change', async function (event) {
 
 });
 
-// Handle file deletion
+
+
+
+
+
+
+/*----------------------------------------------- Handle Delete File Functions------------------------------------------------------ */
+
+
 deleteButton.addEventListener('click', function () {
     const selectedCheckboxes = document.querySelectorAll('.file-checkbox:checked');
 
@@ -164,133 +193,33 @@ deleteButton.addEventListener('click', function () {
         uploadedFilesSection.style.display = 'none';
         dropFilePage2.style.display = 'none';
         dropFileContainer.style.display = 'block';
-        messageContainer.style.display = 'block';
         deleteButtonPage2.style.display = 'none';
         deleteButtonPage1.style.display = 'block';
-        searchPdf.style.display = 'none';
 
         location.reload();
-
-        // setTimeout(() => {
-        //     location.reload();
-        // }, 1000);
-
     }
 });
 
-// Trigger file input when clicking on "Browse"
 
-document.querySelector('.Browse').addEventListener('click', function () {
+
+
+
+/*---------------------------------------------Trigger input Container----------------------------------------------------- */
+
+
+
+document.querySelector('.drop-file-container').addEventListener('click', function () {
     fileInput.click();
 });
 
-
-/*--------------------------------Mesage Part------------------------------- */
-
-// Add event listener to the button
-
-
-sendMessageButton.addEventListener("click", function () {
-    const message = messageInput.value.trim(); // Get the input value (message) and trim whitespace
-
-    if (message) {
-        // Save the message in session storage
-        sessionStorage.setItem("userMessage", message);
-
-        // Clear the input after saving
-        messageInput.value = "";
-
-        console.log("Message saved:", message);
-
-        // Navigate to text.html only if there is a message
-        window.location.href = '../Chat-Bot/text.html'; // Replace with the actual URL or page path
-    } else {
-        console.log("Please type a message before sending.");
-        alert("Please type a message before sending."); // Optionally, alert the user
-    }
-});
-
-
-/*---------------------------------------Save PDF ON Local Storage------------------------------ */
-
-// //Handle search functionality to store selected PDF in local storage
-// searchPdfButton.addEventListener('click', function () {
-//     const selectedCheckboxes = document.querySelectorAll('.file-checkbox:checked');
-
-//     // Check if exactly one checkbox is selected
-//     if (selectedCheckboxes.length === 1) {
-//         const selectedFileIndex = selectedCheckboxes[0].dataset.fileIndex;
-//         const selectedFile = uploadedFiles[selectedFileIndex];
-
-
-        
-//         // Create a FileReader to read the PDF file as a Data URL
-//         const reader = new FileReader();
-//         reader.onloadend = function (e) {
-//             const base64String = btoa(e.target.result);
-//             // Store the file in local storage
-//             //localStorage.setItem("uploadedFile", reader.result);
-//             localStorage.setItem('uploadedFile', base64String); 
-//             // alert(`File "${selectedFile.name}" has been stored in local storage.`);
-//         };
-//         // reader.readAsDataURL(selectedFile);
-//         reader.readAsBinaryString(selectedFile);
-//     } else {
-
-//         alert("Please select exactly one file to store.");
-//     }
-// });
-
-
-// const sendButton = document.getElementById('search-pdf-btn');
-
-// // Add a click event listener to the button
-// sendButton.addEventListener('click', function() {
-//     // Redirect to the pdf.html page when clicked
-//     window.location.href = '../Chat-Bot/pdf.html';
-// });
+document.querySelector('.choose-files').addEventListener('click', function () {
+    fileInput.click();
+})
 
 
 
-//const searchPdfButton = document.getElementById('search-pdf-btn');
-
-searchPdfButton.addEventListener('click', function () {
-    const selectedCheckboxes = document.querySelectorAll('.file-checkbox:checked');
-
-    // Check if exactly one checkbox is selected
-    if (selectedCheckboxes.length === 1) {
-        const selectedFileIndex = selectedCheckboxes[0].dataset.fileIndex;
-        const selectedFile = uploadedFiles[selectedFileIndex];
-
-
-        // Create a FileReader to read the PDF file as a binary string
 
 
 
-        // Create a FileReader to read the PDF file as a Data URL
 
-        const reader = new FileReader();
-        reader.onloadend = function (e) {
-            // Convert the binary string to base64
-            const base64String = btoa(e.target.result);
-            // Store the base64 string of the file in local storage
-            localStorage.setItem('uploadedFile', base64String);
-            // Store the file name in local storage
-            localStorage.setItem('uploadedFileName', selectedFile.name);
-           // alert(`File "${selectedFile.name}" has been stored in local storage.`);
-        };
-        // Read the file as binary string
-        reader.readAsBinaryString(selectedFile);
-    } else {
-        alert("Please select exactly one file to store.");
-    }
-});
-
-// Add a click event listener to the button for navigation
-const sendButton = document.getElementById('search-pdf-btn');
-
-sendButton.addEventListener('click', function() {
-    // Redirect to the pdf.html page when clicked
-    window.location.href = '../Chat-Bot/pdf.html';
-});
 
