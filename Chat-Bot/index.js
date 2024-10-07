@@ -34,7 +34,7 @@ const data = [
 
 
 
-
+    // ------------------------      Dynamic data printing in the pdf.html File  -------------------------------------------//
     const populateData = () => {
         const container = document.getElementById('content-container');
         data.forEach(company => {
@@ -104,55 +104,4 @@ const data = [
     populateData();
 
 
-    // const pdfInput = document.getElementById('pdf-input');
-    //  const pdfNameDisplay = document.getElementById('pdf-name');
-    //  const pdfNameDisplay2 = document.getElementById('pdf-name2');
-    //  const pdfImage = document.getElementById('pdf-image');
-
-    // pdfInput.addEventListener('change', function(event) {
-    //     const file = event.target.files[0];
-    //     if (file && file.type === 'application/pdf') {
-           
-    //         pdfNameDisplay.innerText = file.name;
-    //         pdfNameDisplay2.innerText = file.name;
-
-           
-    //         const reader = new FileReader(); 
-    //         reader.onload = function(e) {
-    //             const typedarray = new Uint8Array(e.target.result);
-
-               
-    //             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
-    //             pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
-                   
-    //                 pdf.getPage(1).then(function(page) {
-    //                     const scale = 1.5; 
-    //                     const viewport = page.getViewport({ scale: scale });
-    //                     const canvas = document.createElement('canvas');
-    //                     const context = canvas.getContext('2d');
-    //                     canvas.height = viewport.height;
-    //                     canvas.width = viewport.width;
-
-    //                     const renderContext = {
-    //                         canvasContext: context,
-    //                         viewport: viewport
-    //                     };
-    //                     page.render(renderContext).promise.then(function() {
-                
-    //                         const imgData = canvas.toDataURL('image/png');
-    //                         pdfImage.src = imgData; 
-    //                         pdfImage.style.display = 'block'; 
-    //                     });
-    //                 });
-    //             });
-    //         };
-    //         reader.readAsArrayBuffer(file);
-    //     } else {
-          
-    //         pdfNameDisplay.innerText = 'No PDF selected';
-    //         pdfImage.src = '';
-    //         pdfImage.style.display = 'none';
-    //     }
-    // });
-
-   
+    

@@ -34,12 +34,6 @@
                 </span>
                <p>Welcome to our chatbot, where your journey is powered by the PDF you choose! Start chatting or ask any questions you have about it!</p>
             </div>
-            
-               
-            <!-- <div>
-                <h1>Upload PDF</h1>
-                <input type="file" id="pdf-input" accept="application/pdf" class="file-input">
-            </div> -->
             <div id="content-container"></div> <!-- Container for dynamically added content -->
             <div class="part4">
                 <input type="text" placeholder="Type a message" id="messageInput">
@@ -103,9 +97,9 @@
                 loadingTask.promise.then(function(pdf) {
                     // Fetch the first page
                     pdf.getPage(1).then(function(page) {
-                        const scale = 1.5; // Scale for rendering the page
+                        const scale = 1.5; 
                         const viewport = page.getViewport({ scale: scale });
-                        const canvas = document.createElement('canvas'); // Create a canvas
+                        const canvas = document.createElement('canvas'); 
                         const context = canvas.getContext('2d');
                         canvas.height = viewport.height;
                         canvas.width = viewport.width;
@@ -120,8 +114,8 @@
                             // Convert canvas to image
                             const imgData = canvas.toDataURL('image/png');
                             const pdfImage = document.getElementById('pdf-image');
-                            pdfImage.src = imgData; // Set the image source
-                            pdfImage.style.display = 'block'; // Show the image
+                            pdfImage.src = imgData;
+                            pdfImage.style.display = 'block';
                         });
                     });
                 }).catch(function(error) {
