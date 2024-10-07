@@ -9,6 +9,7 @@ const deleteButtonPage1 = document.querySelector('.delete-page1');
 const deleteButtonPage2 = document.querySelector('.delete-selected-files');
 const searchPdf = document.querySelector('.submit-pdf');
 const choosePDF = document.querySelector('.choose-files');
+const goBack = document.querySelector('.back')
 
 // Select the input and button elements
 
@@ -217,6 +218,11 @@ document.querySelector('.choose-files').addEventListener('click', function () {
 })
 
 
+/* -------------------------------------------------Profile Page--------------------------------------------- */
+
+document.getElementById('goBackButtonID').addEventListener('click', function () {
+    window.location.href = './INDEX.html';
+})
 
 
 

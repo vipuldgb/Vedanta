@@ -4,6 +4,14 @@
     margin: 0;
 }
 
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: #F3F5F9;
     display: flex;
@@ -53,6 +61,33 @@ nav {
     box-shadow: 0px 16px 40px 0px #7090B033;
 
 }
+
+/*-------------------------Profile PopUp Buuton------------------------------*/
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.4px;
+}
+
+.profile-lists {
+    /* width: 97px;
+    height: 90px;
+    border: 0.5px solid #011E41;
+    padding: 12px 8px 12px 8px;
+    gap: 18px;
+    border-radius: 6px; */
+    display: none;
+}
+
+.profile-lists a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 
 
 /*--------------------------Section--------------*/
@@ -390,36 +425,38 @@ input::placeholder {
     width: 1094px;
     margin: 0 auto 18px auto;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 20px; 
+    gap: 20px;
     cursor: pointer;
 }
 
 .File-Name-image {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     max-width: 100%;
     width: 193.2px;
-    height: 210.55px; /* Fixed height */
+    height: 210.55px;
+    /* Fixed height */
     margin: 0 auto;
     padding: 8px;
     gap: 8px;
     border-radius: 10px;
     background: #F3F3F9;
     position: relative;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .file-info-row {
     display: flex;
-    flex-direction: row; 
-    justify-content: flex-start; /* Center the items */
-    align-items: center; 
+    flex-direction: row;
+    justify-content: flex-start;
+    /* Center the items */
+    align-items: center;
     gap: 10px;
 }
 
@@ -429,17 +466,17 @@ input::placeholder {
 }
 
 .pdf-image {
-    width: 15px; 
+    width: 15px;
     height: 15px;
 }
 
 .file-name {
     font-size: 14px;
-    text-align: left; 
-    word-wrap: break-word; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
+    text-align: left;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* Checkbox styling */
@@ -488,6 +525,61 @@ input::placeholder {
 .pdf-search-container {
     text-align: center;
     margin-top: 20px;
+}
+
+
+
+
+
+
+
+/*----------------------------------------------------------USER PROFILE PAGE-------------------------------------------------------------------*/
+
+.User-Profile-Details {
+    background: none;
+    margin-top: -45px;
+}
+
+/* .user-Image img {
+    width: 697.28px;
+    height: 550px;
+} */
+
+.Profile-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.Profile-Container p {
+    font-family: "Inter", sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 2px;
+    text-align: left;
+    color: #A7A7A7;
+
+}
+
+.go-back-button button {
+
+    padding: 10px 20px 10px 20px;
+    border-radius: 4px;
+    background: #339933;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.go-back-button button:hover
+{
+    background: #388e3c;
 }
 
 
