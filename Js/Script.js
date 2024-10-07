@@ -115,6 +115,7 @@ function renderUploadedFiles() {
 // Handle file selection and upload
 
 fileInput.addEventListener('change', async function (event) {
+
     const file = event.target.files[0]; // Get the selected file
 
     if (file) {
@@ -136,6 +137,8 @@ fileInput.addEventListener('change', async function (event) {
             alert('Please upload a PDF file under 5MB.');
         }
     }
+
+
 });
 
 // Handle file deletion
