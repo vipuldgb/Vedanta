@@ -54,6 +54,7 @@ section {
   gap: 25px;
   display: flex;
   position: relative;
+  min-height: 100vh; /* Ensures full height */
 }
 
 
@@ -103,7 +104,7 @@ section {
   font-size: larger;
   padding-bottom: 9px;  
   font-weight: bold;
-  margin-left: 10px;
+  margin-left: 18px;
 }
 
 .pdf_user {
@@ -221,47 +222,77 @@ section {
 
 
 
-.part4 {
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
-  /* height: 4%; */
-  height: auto;
-  border-radius: 1.5vh;
-  gap: 1.11vh;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(73, 114, 34, 0.3);
-  align-items: center;
-  margin-bottom: 18px;
- 
+
+
+
+
+/* ----------------------- Search Content Part --------------------------- */
+
+.search-Container{
+  
+    
+  padding: 12px;
+  margin-bottom: 21px;
+
 }
 
-.part4 > input {
-  width: 99.9%; 
-  border: none; 
-  outline: none; 
+.userlogo-container{
+  background-color: #F3F5F9;
   margin-left: 10px;
-  font-size: 16px;
-  padding: 21px; 
+  justify-content: flex-start;
+  width: 37vh;
+  border-radius: 0.5vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2px;
+
 }
 
-.part4 > button {
-  background-color: transparent;
-  border: none;
-  padding: 6.72px 5.36px 6.72px 5.36px;
-  cursor: pointer;
+.userlogo-container>.logo{
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
 }
 
-.part4 > button img {
-  width: 3.56vh;
-  height: 4vh;
-  border-radius: 0.22vh 0 0 0;
+.userlogo-container>p{
+  margin-top: 2px;
+  margin-left: 27px;
+  margin-left: 10px;
 }
 
-.part4 > button:focus {
-  outline: none;
+.logo>p{
+  font-weight: bold;
+  color: #339933;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700; 
+  text-align: left;
+  margin-left: 10px;
 }
 
+.AIlogo-container{
+  margin-left: 10px;
+  justify-content: flex-start;
+  border-radius: 0.5vh;
+  padding: 2px;
+  margin-top: 25px;
+}
+
+.AIlogo-container>.logo{
+  display: flex;
+  gap: 5px;
+
+}
+
+.AIlogo-container>p{
+  margin-top: 2px;
+  margin-left: 27px;
+  text-align: justify;
+}
+
+
+.get-content-container>p{
+  text-align: justify;
+  font-size: larger;
+}
 
 
 
@@ -346,4 +377,57 @@ section {
 .disliked {
   background-color: red;
   color: white; 
+}
+
+
+
+/* ------------------------ Search Container -------------------------------*/
+.part4 {
+  position: fixed;
+  border-radius: 1.5vh;
+  bottom: 1px;
+  left: 33px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 7px 22px;
+  border-top: 1px solid #ccc;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-bottom: 2px;
+}
+
+
+.part4 > input {
+  width: 90%; 
+  border: none; 
+  outline: none; 
+  margin-left: 10px;
+  font-size: 16px;
+  padding: 10px; 
+}
+
+.part4 > button {
+  background-color: transparent;
+  border: none;
+  padding: 6.72px 5.36px;
+  cursor: pointer;
+}
+
+.part4 > button img {
+  width: 3.56vh;
+  height: 4vh;
+  border-radius: 0.22vh 0 0 0;
+}
+
+.part4 > button:focus {
+  outline: none;
+}
+
+
+.section1 {
+  position: relative; 
+  padding-bottom: 60px; 
 }

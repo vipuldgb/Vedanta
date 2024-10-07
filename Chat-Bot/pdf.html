@@ -28,19 +28,14 @@
                     <img class="userlogo" src="../Assets/user-2.svg" alt="">
                     <p>Neelima</p>
                 </div>
-                <span class="pdf_user">
+                <!-- <span class="pdf_user">
                     <img src="../Assets/pdf.svg" alt="">
                     <p id="pdf-name"></p>
-                </span>
+                </span> -->
                <p>Welcome to our chatbot, where your journey is powered by the PDF you choose! Start chatting or ask any questions you have about it!</p>
             </div>
             <div id="content-container"></div> <!-- Container for dynamically added content -->
-            <div class="part4">
-                <input type="text" placeholder="Type a message" id="messageInput">
-                <button id="sendButton">
-                    <img src="../Assets/send.svg" alt="Send">
-                </button>
-            </div>
+           
           </div>
           <div class="section2">
             <div class="s2-pdf">
@@ -49,13 +44,19 @@
             </div>
             <img id="pdf-image" class="pdfView" src="" alt="">
           </div>
+          <div class="part4">
+            <input type="text" placeholder="Type a message" id="messageInput">
+            <button id="sendButton">
+                <img src="../Assets/send.svg" alt="Send">
+            </button>
+        </div>
         </section>
       
        
     </div>
    
 
-    <script type="module" src="index.js"></script>
+    <script type="module" src="pdf.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -71,13 +72,13 @@
             console.log('PDF Name:', pdfName);
 
             // Display the PDF name
-            const pdfNameDisplay = document.getElementById('pdf-name');
-            const pdfNameDisplay2 = document.getElementById('pdf-name2');
+           // const pdfNameDisplay = document.getElementById('pdf-name');
+            const pdfNameDisplay = document.getElementById('pdf-name2');
 
             // Check if the element is found
             if (pdfNameDisplay) {
+                
                 pdfNameDisplay.innerText = pdfName || 'No PDF Selected';
-                pdfNameDisplay2.innerText = pdfName || 'No PDF Selected';
             } else {
                 console.error('Element with id "pdf_name" not found');
             }
