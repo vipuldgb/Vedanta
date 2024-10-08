@@ -16,28 +16,6 @@
 
 <body>
   <div class="body">
-    <!-- <header class="header"> -->
-    <!-- <div class="logo-section">
-          <img class="v-logo" src="../Assets/v-logo.svg" alt="vedanta Logo" />
-          <div class="c-logo-bg">
-            <img class="c-logo" src="../Assets/c-logo.svg" alt="cairn logo" />
-          </div> -->
-
-    <!-- Dropdown menu that will appear on click -->
-    <!-- <div id="profileDropdown" class="dropdown-menu">
-            <div class="menu-item">
-              <img
-                src="../Assets/account.svg"
-                alt="User Account"
-                class="menu-icon"
-              />
-              <p>User Account</p>
-            </div>
-            <div class="menu-item">
-              <img src="../Assets/logout.svg" alt="Logout" class="menu-icon" />
-              <p>Logout</p>
-            </div> -->
-
             <header class="header">
               <div class="logo-section">
                 <img class="v-logo" src="../Assets/v-logo.svg" alt="vedanta Logo" />
@@ -51,22 +29,18 @@
           
               <!-- Dropdown menu that will appear on click -->
               <div id="profileDropdown" class="dropdown-menu">
-                <div class="menu-item">
-                  <img src="../Assets/user-2.svg" alt="User Account" class="menu-icon" />
-                  <p style="color: black;">Account</p>
+                <div id="Profile-div" class="menu-item">
+                  <!-- Profile-icon with id "Profile-icon" -->
+                  <img id="Profile-icon" src="../Assets/user-2.svg" alt="User Account" class="menu-icon" />
+                  <p style="color: black;">Profile</p>
                 </div>
                 <div class="menu-item">
                   <img src="../Assets/sign-out.svg" alt="Sign Out" class="menu-icon" />
                   <p style="color: red;">Sign Out</p>
                 </div>
               </div>
+              
             </header>
-
-
-
-
-    <!-- <img class="user-logo" src="../Assets/user.svg" alt="user logo" /> -->
-    </header>
     <section>
       <div class="section1">
         <div class="part1">
@@ -106,16 +80,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Debugging statement
-      console.log("DOM fully loaded and parsed");
+      
 
       // Retrieve the stored PDF data and file name from localStorage
       const base64String = localStorage.getItem("uploadedFile");
       const pdfName = localStorage.getItem("uploadedFileName");
 
-      // Debugging statement for localStorage
-      console.log("Base64 PDF:", base64String);
-      console.log("PDF Name:", pdfName);
+   
 
       // Display the PDF name
       // const pdfNameDisplay = document.getElementById('pdf-name');
@@ -170,9 +141,22 @@
             console.error("Error loading PDF: " + error);
           });
       } else {
-        console.log("No PDF found in localStorage.");
+        console.warn("No PDF found in localStorage.");
       }
     });
+
+
+     // ---------------------- Navigation to the Profile Page ------------------------//
+     document.addEventListener("DOMContentLoaded", function () {
+  // Add event listener to the 'Profile-icon' element
+  document.getElementById('Profile-div').addEventListener('click', function () {
+    // Navigate to Profile.html page
+    window.location.href = '../Profile/PROFILE.html';
+  });
+});
+
+
+       
   </script>
 </body>
 

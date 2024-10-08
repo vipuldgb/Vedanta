@@ -268,8 +268,7 @@ document.getElementById('sendButton').addEventListener('click', function() {
         // Call the function to display the new search data
         displaySearchData(inputMessage, searchData );
         
-        // For testing, log the updated searchData to the console
-        console.log('Updated searchData:', searchData);
+        
     }
 });
 
@@ -299,3 +298,5 @@ document.addEventListener('DOMContentLoaded', function () {
       event.stopPropagation();
     });
   });
+
+
