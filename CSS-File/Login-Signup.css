@@ -1,0 +1,168 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Login-Page-Container {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  height: 100vh;
+}
+
+.Login-Left-Part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #f4f4f4;
+}
+
+.Login-Left-Part::before {
+  content: "";
+  background: url(../Images/Side-Image.svg) no-repeat;
+  background-position: top left;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 299px;
+  height: 240px;
+}
+
+.Login-Right-Part {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 76.8px;
+}
+
+.Logo-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 210px;
+  margin: 56px auto 0 auto;
+}
+
+.Logo-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Title-Container h5 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16.16px;
+  font-weight: 600;
+  line-height: 24.23px;
+  text-align: center;
+  color: #339933;
+}
+
+#loginForm,
+#SignUpForm {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  max-width: 100%;
+  width: 429.13px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 50.49px;
+}
+
+.Input-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+.form-group__label {
+  font-family: "Poppins", sans-serif;
+  font-size: 16.16px;
+  font-weight: 400;
+  line-height: 24.23px;
+  text-align: left;
+  max-width: 100%;
+  width: 429.13px;
+  margin: 0 auto;
+  color: #555555;
+}
+
+.Input-Container input {
+  font-family: "Poppins", sans-serif;
+  font-size: 14.14px;
+  font-weight: 400;
+  line-height: 21.2px;
+  text-align: left;
+  max-width: 100%;
+  width: 320px;
+  margin: 0 auto;
+  border: none;
+  background: #f4f4f4;
+  outline: none;
+  color: #555555;
+}
+
+.Input-Container input:focus {
+  border: none;
+}
+
+.Email-Password-Icon {
+  width: 50.49px;
+  height: 50.49px;
+  left: 378.65px;
+  border-radius: 8.08px;
+  background: #339933;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group__button {
+  height: 50.49px;
+  border-radius: 8px;
+  background: #339933;
+  box-shadow: 0px 6px 6px rgba(51, 153, 51, 0.5);
+  border: none;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16.16px;
+  font-weight: 600;
+  line-height: 24.23px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/*-------------------------------------------------------Toggle-Login-Signup--------------------------------------------------*/
+
+.toggle-signup-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+#toggleSignUpButton,
+#toggleLoginButton {
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  background: none;
+  color: #339933;
+  cursor: pointer;
+}

@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Toggle the dropdown when userLogo is clicked
   userLogo.addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevent event from bubbling up to window
+    event.stopPropagation();
     dropdown.style.display =
       dropdown.style.display === "block" ? "none" : "block";
   });

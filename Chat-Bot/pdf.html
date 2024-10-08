@@ -46,7 +46,7 @@
             />
             <p style="color: black">Profile</p>
           </div>
-          <div class="menu-item">
+          <div id="SignOut-div" class="menu-item">
             <img
               src="../Assets/sign-out.svg"
               alt="Sign Out"
@@ -160,6 +160,17 @@
           .addEventListener("click", function () {
             // Navigate to Profile.html page
             window.location.href = "../Profile/PROFILE.html";
+          });
+      });
+
+      // ---------------------- Navigation to the Login Page ------------------------//
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add event listener to the 'Profile-icon' element
+        document
+          .getElementById("SignOut-div")
+          .addEventListener("click", function () {
+            // Navigate to Profile.html page
+            window.location.href = "../Login-Signup/LOGIN.html";
           });
       });
     </script>

@@ -1,12 +1,10 @@
 body {
   font-family: "Inter", sans-serif;
-  background-color: #F3F5F9;
+  background-color: #f3f5f9;
   height: 100vh;
 }
 
-
 /* ---------------------------Header section------------------------------------- */
-
 
 .header {
   display: flex;
@@ -22,7 +20,8 @@ body {
   gap: 20px;
 }
 
-.v-logo, .c-logo {
+.v-logo,
+.c-logo {
   height: 69px;
 }
 
@@ -66,17 +65,6 @@ body {
   height: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /*----------------------------Main Body--------------------------------------- */
 section {
   margin: 24px 10px 0px 25px;
@@ -86,14 +74,11 @@ section {
   min-height: 100vh; /* Ensures full height */
 }
 
-
-
 /* ---------- Section 1 ----------- */
 
 .section1 {
   width: 72%;
   row-gap: 12px;
-  
 }
 
 .part1 {
@@ -102,49 +87,47 @@ section {
   background-color: white;
   /* height: 19%; */
   height: auto;
-  gap: 1.11vh; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-
-
+  gap: 1.11vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .part1_user {
   align-items: center;
-  gap: 6px; 
+  gap: 6px;
   padding: 0.5px 0 0 8px;
   display: flex;
 }
 
 .userlogo {
   height: 3.8vh;
-  padding: 0.39vh 0.56vh 0.39vh 0.56vh; 
-  border-radius: 10.99vh 0 0 0; 
+  padding: 0.39vh 0.56vh 0.39vh 0.56vh;
+  border-radius: 10.99vh 0 0 0;
 }
 
 .part1_user > p {
   font-weight: bold;
   color: #339933;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700; 
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
   text-align: left;
 }
 
 .part1 > p {
   font-size: larger;
-  padding-bottom: 9px;  
+  padding-bottom: 9px;
   font-weight: bold;
   margin-left: 18px;
 }
 
 .pdf_user {
-  background-color: #F3F5F9;
+  background-color: #f3f5f9;
   display: flex;
   margin-left: 10px;
   justify-content: flex-start;
   width: 37vh;
   border-radius: 0.5vh;
   gap: 1.33vh;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .pdf_user > img {
@@ -157,17 +140,15 @@ section {
   padding: 6px 10px 10px 10px;
 }
 
-
 @media (max-width: 768px) {
-   .part1>p{
-      font-weight: 600;
+  .part1 > p {
+    font-weight: 600;
   }
-  
+
   .pdf_user {
-      width: 33vw;
+    width: 33vw;
   }
 }
-
 
 .part2 {
   display: flex;
@@ -177,11 +158,9 @@ section {
   border-radius: 1.5vh;
   /* height: 38%; */
   height: auto;
-  gap: 1.11vh; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  gap: 1.11vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .logo-container {
   display: flex;
@@ -192,9 +171,9 @@ section {
 .logo-container > p {
   font-weight: bold;
   color: #339933;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
-  line-height: 1.67vh; 
+  line-height: 1.67vh;
   text-align: left;
   margin-top: 28px;
   margin-left: 12px;
@@ -212,7 +191,7 @@ section {
 }
 
 .paragraph-container > p {
-  margin:0 15px 0 15px;
+  margin: 0 15px 0 15px;
   line-height: 28px;
   text-align: justify;
   /* padding: 2px; */
@@ -224,7 +203,6 @@ section {
   margin-bottom: 4px;
 }
 
-
 .part3 {
   background-color: white;
   margin-bottom: 18px;
@@ -232,65 +210,54 @@ section {
   /* height: 38%; */
   height: auto;
   gap: 2.67vh;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .normal-dislike {
   transform: rotate(180deg);
   /* transform: rotate(360deg); */
   transform: scaleY(-1);
-
 }
-
-
-
-
-
-
 
 /* ----------------------- Search Content Part --------------------------- */
 
-.search-Container{
-  
-    
+.search-Container {
   padding: 12px;
   margin-bottom: 21px;
-
 }
 
-.userlogo-container{
-  background-color: #F3F5F9;
+.userlogo-container {
+  background-color: #f3f5f9;
   margin-left: 10px;
   justify-content: flex-start;
   width: 37vh;
   border-radius: 0.5vh;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 2px;
-
 }
 
-.userlogo-container>.logo{
+.userlogo-container > .logo {
   display: flex;
   gap: 5px;
   margin-left: 10px;
 }
 
-.userlogo-container>p{
+.userlogo-container > p {
   margin-top: 2px;
   margin-left: 27px;
   margin-left: 10px;
 }
 
-.logo>p{
+.logo > p {
   font-weight: bold;
   color: #339933;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700; 
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
   text-align: left;
   margin-left: 10px;
 }
 
-.AIlogo-container{
+.AIlogo-container {
   margin-left: 10px;
   justify-content: flex-start;
   border-radius: 0.5vh;
@@ -298,87 +265,74 @@ section {
   margin-top: 25px;
 }
 
-.AIlogo-container>.logo{
+.AIlogo-container > .logo {
   display: flex;
   gap: 5px;
-
 }
 
-.AIlogo-container>p{
+.AIlogo-container > p {
   margin-top: 2px;
   margin-left: 27px;
   text-align: justify;
 }
 
-
-.get-content-container>p{
+.get-content-container > p {
   text-align: justify;
   font-size: larger;
 }
-
-
 
 /*--------- Section 2 ----------- */
 .section2 {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
   width: 26%;
   border-radius: 12px;
   height: 95vh;
-  position: -webkit-sticky; 
+  position: -webkit-sticky;
   position: sticky;
-  top: 0; 
- 
- 
+  top: 0;
 }
-
 
 .s2-pdf {
   display: flex;
-  align-items: center; 
+  align-items: center;
   padding: 12px;
   gap: 6px;
- 
 }
 
 .s2-pdf img {
   height: 2.8vh;
 }
 
-.s2-pdf p{
+.s2-pdf p {
   font-weight: 700;
   font-size: larger;
 }
 
-
 .pdfView {
-  width: auto;  
-  height: auto;  
+  width: auto;
+  height: auto;
   margin: 12px;
   align-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 12px; 
+  border-radius: 12px;
 }
-
-
-
 
 /* Adding Button to each element and making button Functional */
 
-
-.btn{
+.btn {
   border: none;
   background-color: white;
 }
 
 .material-symbols-outlined {
-  font-size: 48px; 
-  padding: 10px;  
-  display: inline-block; 
-  transition: background-color 0.3s ease; 
-  border-radius: 50%; 
+  font-size: 48px;
+  padding: 10px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
 }
 
 .thumb-container {
@@ -393,15 +347,13 @@ section {
   border-radius: 50%;
 }
 .liked {
-  background-color:green;
-  color: white; 
+  background-color: green;
+  color: white;
 }
 .disliked {
   background-color: red;
-  color: white; 
+  color: white;
 }
-
-
 
 /* ------------------------ Search Container -------------------------------*/
 .part4 {
@@ -421,14 +373,13 @@ section {
   margin-bottom: 2px;
 }
 
-
 .part4 > input {
-  width: 90%; 
-  border: none; 
-  outline: none; 
+  width: 90%;
+  border: none;
+  outline: none;
   margin-left: 10px;
   font-size: 16px;
-  padding: 10px; 
+  padding: 10px;
 }
 
 .part4 > button {
@@ -448,8 +399,7 @@ section {
   outline: none;
 }
 
-
 .section1 {
-  position: relative; 
-  padding-bottom: 60px; 
+  position: relative;
+  padding-bottom: 60px;
 }
