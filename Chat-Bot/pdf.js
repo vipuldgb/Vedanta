@@ -268,12 +268,35 @@ document.getElementById('sendButton').addEventListener('click', function() {
         // Call the function to display the new search data
         displaySearchData(inputMessage, searchData );
         
-        // For testing, log the updated searchData to the console
-        console.log('Updated searchData:', searchData);
+        
     }
 });
 
 
 
+// ---------------------- User Logo Click Options ------------------------//
 
-    
+document.addEventListener('DOMContentLoaded', function () {
+    var userLogo = document.getElementById("userLogo");
+    var dropdown = document.getElementById("profileDropdown");
+
+    // Toggle the dropdown when userLogo is clicked
+    userLogo.addEventListener("click", function(event) {
+      event.stopPropagation();  // Prevent event from bubbling up to window
+      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener("click", function() {
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      }
+    });
+
+    // Prevent dropdown from closing if clicked inside the dropdown
+    dropdown.addEventListener("click", function(event) {
+      event.stopPropagation();
+    });
+  });
+
+

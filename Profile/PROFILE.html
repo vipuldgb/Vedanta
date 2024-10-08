@@ -20,27 +20,29 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-logo">
-            <div class="nav-logo1">
-                <img src="../Images/Logo1.svg" alt="Logo1" class="logo1" />
-            </div>
-            <div class="nav-logo2">
-                <img src="../Images/Logo2.svg" alt="Logo2" class="logo2" />
-            </div>
+    <header class="header">
+        <div class="logo-section">
+          <img class="v-logo" src="../Assets/v-logo.svg" alt="vedanta Logo" />
+          <div class="c-logo-bg">
+            <img class="c-logo" src="../Assets/c-logo.svg" alt="cairn logo" />
+          </div>
         </div>
-        <div class="profile">
-            <img src="../Images/User.svg" alt="User" />
-            <ul class="profile-lists">
-                <li>
-                    <a href=""><img src="../Images/User-Profile.svg" alt="user" /> Profile </a>
-                </li>
-                <li>
-                    <a href=""><img src="../Images/Logout.svg" alt="SignOut" /> Sign Out</a>
-                </li>
-            </ul>
+    
+        <!-- User logo which triggers dropdown -->
+        <img class="user-logo" src="../Assets/user-2.svg" alt="user logo" id="userLogo" />
+    
+        <!-- Dropdown menu that will appear on click -->
+        <div id="profileDropdown" class="dropdown-menu">
+          <!-- <div class="menu-item">
+            <img src="../Assets/user-2.svg" alt="User Account" class="menu-icon" />
+            <p style="color: black;">Profile</p>
+          </div> -->
+          <div class="menu-item">
+            <img src="../Assets/sign-out.svg" alt="Sign Out" class="menu-icon" />
+            <p style="color: red;">Sign Out</p>
+          </div>
         </div>
-    </nav>
+      </header>
     <section class="User-Profile-Details">
         <div class="Profile-Container">
             <div class="user-Image">
@@ -55,7 +57,28 @@
         </div>
     </section>
 
+<<<<<<< HEAD
     <script src="../Login-Signup/Login-Signup-JS/Auth.js"></script>
+=======
+    <script src="../Js/Script.js"></script>
+    <script>
+        //  ----------------- DropDOwn Script ------------------------ //
+         document.getElementById("userLogo").addEventListener("click", function () {
+        const dropdown = document.getElementById("profileDropdown");
+        if (dropdown.style.display === "none" || dropdown.style.display === "") {
+            dropdown.style.display = "block";
+        } else {
+            dropdown.style.display = "none";
+        }
+    });
+
+    //  ------------------- Navigation back to the Pdf Page ------------------- //
+    
+document.getElementById('goBackButtonID').addEventListener('click', function () {
+    window.location.href = '../INDEX.html';
+})
+    </script>
+>>>>>>> 4047943c677b3d40b7f511b2e2755eb8b2cd89cb
 
 </body>
 
