@@ -218,11 +218,8 @@ document.querySelector('.choose-files').addEventListener('click', function () {
 })
 
 
-/* -------------------------------------------------Profile Page--------------------------------------------- */
 
-document.getElementById('goBackButtonID').addEventListener('click', function () {
-    window.location.href = '../Chat-Bot/pdf.html';
-})
+
 
 
 
