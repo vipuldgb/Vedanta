@@ -1,81 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS-File/Style.css">
+    <link rel="stylesheet" href="../CSS-File/Style.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="logo-section">
-          <img class="v-logo" src="../Assets/v-logo.svg" alt="vedanta Logo" />
-          <div class="c-logo-bg">
-            <img class="c-logo" src="../Assets/c-logo.svg" alt="cairn logo" />
-          </div>
+      <div class="logo-section">
+        <img class="v-logo" src="../Assets/v-logo.svg" alt="vedanta Logo" />
+        <div class="c-logo-bg">
+          <img class="c-logo" src="../Assets/c-logo.svg" alt="cairn logo" />
         </div>
-    
-        <!-- User logo which triggers dropdown -->
-        <img class="user-logo" src="../Assets/user-2.svg" alt="user logo" id="userLogo" />
-    
-        <!-- Dropdown menu that will appear on click -->
-        <div id="profileDropdown" class="dropdown-menu">
-          <!-- <div class="menu-item">
-            <img src="../Assets/user-2.svg" alt="User Account" class="menu-icon" />
-            <p style="color: black;">Profile</p>
-          </div> -->
-          <div class="menu-item">
-            <img src="../Assets/sign-out.svg" alt="Sign Out" class="menu-icon" />
-            <p style="color: red;">Sign Out</p>
-          </div>
+      </div>
+
+      <!-- User logo which triggers dropdown -->
+      <img
+        class="user-logo"
+        src="../Assets/user-2.svg"
+        alt="user logo"
+        id="userLogo"
+      />
+
+      <!-- Dropdown menu that will appear on click -->
+      <div id="profileDropdown" class="dropdown-menu">
+        <div class="menu-item">
+          <img src="../Assets/sign-out.svg" alt="Sign Out" class="menu-icon" />
+          <p style="color: red">Sign Out</p>
         </div>
-      </header>
+      </div>
+    </header>
     <section class="User-Profile-Details">
-        <div class="Profile-Container">
-            <div class="user-Image">
-                <img src="../Images/Female-Writer-Is-Thinking.svg" alt="Writter"/>
-            </div>
-            <div>
-                <p>COMING SOON</p>
-            </div>
-            <div class="go-back-button">
-                <button id="goBackButtonID">Go Back</button>
-            </div>
+      <div class="Profile-Container">
+        <div class="user-Image">
+          <img src="../Images/Female-Writer-Is-Thinking.svg" alt="Writter" />
         </div>
+        <div>
+          <p>COMING SOON</p>
+        </div>
+        <div class="go-back-button">
+          <button id="goBackButtonID">Go Back</button>
+        </div>
+      </div>
     </section>
 
     <script src="../Js/Script.js"></script>
     <script>
-        //  ----------------- DropDOwn Script ------------------------ //
-         document.getElementById("userLogo").addEventListener("click", function () {
-        const dropdown = document.getElementById("profileDropdown");
-        if (dropdown.style.display === "none" || dropdown.style.display === "") {
+      //  ----------------- DropDOwn Script ------------------------ //
+      document
+        .getElementById("userLogo")
+        .addEventListener("click", function () {
+          const dropdown = document.getElementById("profileDropdown");
+          if (
+            dropdown.style.display === "none" ||
+            dropdown.style.display === ""
+          ) {
             dropdown.style.display = "block";
-        } else {
+          } else {
             dropdown.style.display = "none";
-        }
-    });
+          }
+        });
 
-    //  ------------------- Navigation back to the Pdf Page ------------------- //
-    
-document.getElementById('goBackButtonID').addEventListener('click', function () {
-    window.location.href = '../INDEX.html';
-})
+      //  ------------------- Navigation back to the Pdf Page ------------------- //
+
+      document
+        .getElementById("goBackButtonID")
+        .addEventListener("click", function () {
+          window.location.href = "../INDEX.html";
+        });
     </script>
-
-</body>
-
+  </body>
 </html>
