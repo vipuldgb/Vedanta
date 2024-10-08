@@ -217,15 +217,6 @@ document.querySelector('.choose-files').addEventListener('click', function () {
     fileInput.click();
 })
 
-<<<<<<< HEAD
-
-
-
-
-
-=======
-   
->>>>>>> 4047943c677b3d40b7f511b2e2755eb8b2cd89cb
 
 
 

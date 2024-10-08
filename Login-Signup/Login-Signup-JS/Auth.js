@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // window.location.href = '../../INDEX.html';
 
             if (email && password) {
                 alert(`Login Successful!\nEmail: ${email}`);
@@ -54,35 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    /* -------------------------------------------------Profile Page--------------------------------------------- */
-
-    // const goBackButton = document.getElementById('goBackButtonID');
-
-    // if (goBackButton) {
-    //     goBackButton.addEventListener('click', function () {
-    //         window.location.href = '../Chat-Bot/pdf.html';
-    //     })
-    // }
-
-
     /* -------------------------------------------------- TOGGLE BETWEEN LOGIN SIGNUP ----------------------------------------------------- */
 
-    // document.getElementById('toggleButton').addEventListener('click', function () {
-    //     const loginForm = document.getElementById('loginForm');
-    //     const signUpForm = document.getElementById('SignUpForm');
-    //     const toggleButton = document.getElementById('toggleButton');
-
-    //     // Toggle active class on the forms
-    //     loginForm.classList.toggle('active');
-    //     signUpForm.classList.toggle('active');
-
-    //     // Change button text based on current state
-    //     if (loginForm.classList.contains('active')) {
-    //         toggleButton.textContent = "Don't have an account? Signup";
-    //     } else {
-    //         toggleButton.textContent = "Already have an account? Login";
-    //     }
-    // });
 
 
     const ToggleSignup = document.getElementById('toggleSignUpButton');
